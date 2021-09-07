@@ -1,4 +1,4 @@
-var path = require('path')
+var path = require("path");
 
 /**
  * A function that can be used to resolve a path relatively to the
@@ -15,5 +15,5 @@ var path = require('path')
  * the project root directory.
  */
 module.exports = function projectPath(...paths) {
-  return path.resolve(process.env.INIT_CWD, ...paths);
-}
+	return path.resolve(process.env.INIT_CWD, ...paths);
+};

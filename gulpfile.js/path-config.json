@@ -1,39 +1,39 @@
 {
-  "src": "./src",
-  "dest": "./public",
+	"src": "./src",
+	"dest": "./public",
 
-  "html": {
-    "src": "html",
-    "dest": "./"
-  },
+	"html": {
+		"src": "html",
+		"dest": "./"
+	},
 
-  "static": {
-    "src": "static",
-    "dest": "./"
-  },
+	"static": {
+		"src": "static",
+		"dest": "./"
+	},
 
-  "javascripts": {
-    "src": "javascripts",
-    "dest": "javascripts"
-  },
+	"javascripts": {
+		"src": "javascripts",
+		"dest": "javascripts"
+	},
 
-  "stylesheets": {
-    "src": "stylesheets",
-    "dest": "stylesheets"
-  },
+	"stylesheets": {
+		"src": "stylesheets",
+		"dest": "stylesheets"
+	},
 
-  "images": {
-    "src": "images",
-    "dest": "images"
-  },
+	"images": {
+		"src": "images",
+		"dest": "images"
+	},
 
-  "fonts": {
-    "src": "fonts",
-    "dest": "fonts"
-  },
+	"fonts": {
+		"src": "fonts",
+		"dest": "fonts"
+	},
 
-  "icons": {
-    "src": "icons",
-    "dest": "images"
-  }
+	"icons": {
+		"src": "icons",
+		"dest": "images"
+	}
 }
