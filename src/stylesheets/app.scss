@@ -1,1 +1,14 @@
-@import "base/typography";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.btn {
+		@apply px-4 py-2 bg-blue-600 text-white rounded;
+	}
+}
+
+.hello-world {
+	@apply px-4;
+	background: blue;
+}
