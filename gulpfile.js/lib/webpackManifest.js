@@ -1,12 +1,20 @@
 const path = require("path");
 const projectPath = require("./projectPath");
-const fs = require("fs");
+const fs = require("fs-extra");
+module.exports = class BundlesizeWebpackPlugin {
+	constructor(jsDest, dest, filename) {
+		this.jsDest = jsDest;
+		this.dest = dest;
+		this.filename = filename || "rev-manifest.json";
+	}
 
-module.exports = function (jsDest, dest, filename) {
-	filename = filename || "rev-manifest.json";
+	apply(compiler) {
+		/* stats is passed as an argument when done hook is tapped.  */
+		const jsDest = this.jsDest;
+		const dest = this.dest;
+		const filename = this.filename;
 
-	return function () {
-		this.plugin("done", function (statsObject) {
+		compiler.hooks.done.tap('Hello World Plugin', statsObject => {
 			const stats = statsObject.toJson();
 			const chunks = stats.assetsByChunkName;
 			const manifest = {};
@@ -26,5 +34,6 @@ module.exports = function (jsDest, dest, filename) {
 				JSON.stringify(manifest)
 			);
 		});
-	};
+	}
 };
+

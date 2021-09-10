@@ -1,19 +1,16 @@
 "use strict";
 
-if (!TASK_CONFIG.javascripts) {
-	return;
-}
-
 const path = require("path");
+const webpack = require("webpack");
+const TerserPlugin = require("terser-webpack-plugin");
+const querystring = require("querystring");
+const ESLintPlugin = require("eslint-webpack-plugin");
 const pathToUrl = require("./pathToUrl");
 const projectPath = require("./projectPath");
-const webpack = require("webpack");
 const webpackManifest = require("./webpackManifest");
-const querystring = require("querystring");
 
-module.exports = function (env) {
-	process.env["BABEL_ENV"] =
-		process.env["BABEL_ENV"] || process.env["NODE_ENV"] || env;
+module.exports = env => {
+	process.env["BABEL_ENV"] = process.env["BABEL_ENV"] || process.env["NODE_ENV"] || env;
 
 	const jsSrc = projectPath(PATH_CONFIG.src, PATH_CONFIG.javascripts.src);
 	const jsDest = projectPath(PATH_CONFIG.dest, PATH_CONFIG.javascripts.dest);
@@ -29,11 +26,15 @@ module.exports = function (env) {
 	TASK_CONFIG.javascripts.babelLoader.test = TASK_CONFIG.javascripts.babelLoader.test || new RegExp(`(\\${extensions.join("$|")}$)`);
 
 	const webpackConfig = {
+		mode: process.env["BABEL_ENV"],
+		performance: {
+			hints: false,
+		},
 		context: jsSrc,
 		entry: TASK_CONFIG.javascripts.entry,
 		output: {
 			path: path.normalize(jsDest),
-			filename: rev ? "[name]-[hash].js" : "[name].js",
+			filename: rev ? "[name]-[contenthash].js" : "[name].js",
 			publicPath: publicPath,
 		},
 		plugins: [],
@@ -78,7 +79,14 @@ module.exports = function (env) {
 			}
 
 			webpackConfig.plugins.push(
-				new webpack.HotModuleReplacementPlugin()
+				new webpack.HotModuleReplacementPlugin(),
+				/**
+				 * docs: https://www.npmjs.com/package/eslint-webpack-plugin
+				 */
+				new ESLintPlugin({
+					files: `${PATH_CONFIG.javascripts}/**/*.{js}`,
+					overrideConfigFile: projectPath(".eslintrc.js")
+				}),
 			);
 		}
 	}
@@ -100,11 +108,27 @@ module.exports = function (env) {
 			uglifyConfig.sourceMap = true;
 		}
 
+		webpackConfig.optimization = {
+			minimize: true,
+			minimizer: [
+				/**
+				 * docs: https://webpack.js.org/plugins/terser-webpack-plugin
+				 */
+				new TerserPlugin({
+					terserOptions: {
+						format: {
+							comments: /@license/i, // preserve license comments
+						},
+					},
+					extractComments: false,
+				})
+			],
+		};
+
 		webpackConfig.plugins.push(
 			new webpack.DefinePlugin(
 				TASK_CONFIG.javascripts.production.definePlugin
 			),
-			new webpack.optimize.UglifyJsPlugin(uglifyConfig),
 			new webpack.NoEmitOnErrorsPlugin()
 		);
 	}

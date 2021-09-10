@@ -24,7 +24,7 @@ module.exports = {
 		 * docs: https://eslint.org/docs/user-guide/configuring#ignorepatterns-in-config-files
 		 */
 		// 'my-file.js',
-		// '**/my-directory/*.js'
+		'gulpfile.js/**/*.js'
 	],
 	rules: {
 		/**

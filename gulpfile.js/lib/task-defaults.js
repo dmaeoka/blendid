@@ -1,5 +1,3 @@
-const os = require("os");
-const path = require("path");
 const projectPath = require("./projectPath");
 const pkg = require(projectPath("package.json"));
 
@@ -14,13 +12,13 @@ module.exports = {
 		},
 		devtool: "eval-cheap-module-source-map",
 		babelLoader: {
-			// "test" is derived from TASK_CONFIG.javascripts.extensions
-			// "options" is derived from TASK_CONFIG.javascripts.babel
+			test: /\.js$/,
 			loader: "babel-loader",
 			exclude: /node_modules/,
 		},
 		babel: {
-			presets: [["env", { modules: false }], "stage-1"],
+			presets: ["@babel/preset-env"],
+			plugins: ["@babel/plugin-transform-runtime"],
 		},
 		development: {},
 		production: {
@@ -35,6 +33,7 @@ module.exports = {
 	},
 
 	stylesheets: {
+		tailwindcss: false,
 		sass: {
 			includePaths: ["./node_modules"],
 		},
@@ -79,9 +78,6 @@ module.exports = {
 	},
 
 	additionalTasks: {
-		initialize(gulp, PATH_CONFIG, TASK_CONFIG) {
-			// gulp.task('myTask', function() { })
-		},
 		development: {
 			prebuild: null,
 			postbuild: null,

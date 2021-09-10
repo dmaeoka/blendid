@@ -1,17 +1,14 @@
-if (!TASK_CONFIG.javascripts) return;
+// if (!TASK_CONFIG.javascripts) return;
+const webpack = require("webpack");
+const logger = require("../lib/compileLogger");
 
-var gulp = require("gulp");
-var logger = require("../lib/compileLogger");
-var webpack = require("webpack");
+function webpackProductionTask(cb) {
+	const webpackConfig = require("../lib/webpack-multi-config")("production");
 
-var webpackProductionTask = function (callback) {
-	var webpackConfig = require("../lib/webpack-multi-config")("production");
-
-	webpack(webpackConfig, function (err, stats) {
+	webpack(webpackConfig, (err, stats) => {
 		logger(err, stats);
-		callback();
+		cb();
 	});
 };
 
-gulp.task("webpack:production", webpackProductionTask);
 module.exports = webpackProductionTask;

@@ -1,13 +1,14 @@
-if (!TASK_CONFIG.static) return;
-
+const { src, dest } = require("gulp");
 const changed = require("gulp-changed");
-const gulp = require("gulp");
 const path = require("path");
 const projectPath = require("../lib/projectPath");
 
-const staticTask = function () {
+function staticTask() {
 	const srcPath = projectPath(PATH_CONFIG.src, PATH_CONFIG.static.src);
-	const defaultSrcOptions = { dot: true };
+	const defaultSrcOptions = {
+		dot: true,
+		allowEmpty: true
+	};
 	const options = Object.assign(
 		defaultSrcOptions,
 		TASK_CONFIG.static.srcOptions || {}
@@ -25,8 +26,7 @@ const staticTask = function () {
 		dest: projectPath(PATH_CONFIG.dest, PATH_CONFIG.static.dest),
 	};
 
-	return gulp.src(paths.src, options).pipe(gulp.dest(paths.dest));
+	return src(paths.src, options).pipe(dest(paths.dest));
 };
 
-gulp.task("static", staticTask);
 module.exports = staticTask;

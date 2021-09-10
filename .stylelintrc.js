@@ -1,19 +1,19 @@
 module.exports = {
-	extends: "stylelint-config-recommended",
+	extends: ["stylelint-config-recommended"],
 	plugins: [
 		/**
 		 * add plugins
 		 * docs: https://stylelint.io/user-guide/configure#plugins
 		 */
-		// 'stylelint-scss' // stylelint by itself supports SCSS syntax very well
+		"stylelint-scss", // stylelint by itself supports SCSS syntax very well
 	],
 	ignoreFiles: [
 		/**
 		 * ignore certain files
 		 * docs: https://stylelint.io/user-guide/configure#ignorefiles
 		 */
-		// 'my-file.css',
-		// '**/my-directory/*.css'
+		'app.css',
+		'public/**/*.css'
 	],
 	rules: {
 		/**
@@ -21,6 +21,20 @@ module.exports = {
 		 * docs: https://stylelint.io/user-guide/rules/list
 		 */
 		"at-rule-no-unknown": null,
+		"scss/at-rule-no-unknown": [
+			true,
+			{
+				ignoreAtRules: [
+					"tailwind",
+					"apply",
+					"variants",
+					"responsive",
+					"screen",
+					"layer"
+				],
+			},
+		],
+		"declaration-block-trailing-semicolon": null,
 		"no-descending-specificity": null,
 	},
 };

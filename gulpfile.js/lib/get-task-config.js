@@ -1,22 +1,9 @@
-const fs = require("fs");
+const fs = require("fs-extra");
+const mergeWith = require("lodash/mergeWith");
 const projectPath = require("./projectPath");
 const taskDefaults = require("./task-defaults");
-const mergeWith = require("lodash/mergeWith");
 
 function getTaskConfig() {
-	if (process.env.BLENDID_CONFIG_PATH) {
-		return require(projectPath(
-			process.env.BLENDID_CONFIG_PATH,
-			"task-config.js"
-		));
-	}
-
-	const defaultConfigPath = projectPath("config/task-config.js");
-
-	if (fs.existsSync(defaultConfigPath)) {
-		return require(defaultConfigPath);
-	}
-
 	return require("../task-config");
 }
 
@@ -45,6 +32,4 @@ function replaceArrays(objValue, srcValue) {
 	}
 }
 
-const taskConfig = withDefaults(getTaskConfig());
-
-module.exports = taskConfig;
+module.exports = withDefaults(getTaskConfig());

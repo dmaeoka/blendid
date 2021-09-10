@@ -1,15 +1,15 @@
-var compact = require("lodash/compact");
-var isEmpty = require("lodash/isEmpty");
+const compact = require("lodash/compact");
+const isEmpty = require("lodash/isEmpty");
 
 // Grouped by what can run in parallel
-var assetTasks = ["fonts", "iconFont", "images", "svgSprite"];
-var codeTasks = ["html", "stylesheets", "javascripts"];
+const assetTasks = ["fonts", "images", "svgSprite"];
+const codeTasks = ["html", "stylesheets", "javascripts"];
 
-module.exports = function (env) {
+module.exports = env => {
 	function matchFilter(task) {
 		if (TASK_CONFIG[task]) {
 			if (task === "javascripts") {
-				task = env === "production" ? "webpack:production" : false;
+				task = env === "production" ? "webpackProduction" : false;
 			}
 			return task;
 		}
