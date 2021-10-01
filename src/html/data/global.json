@@ -1,3 +1,5 @@
 {
-  "message": "Blendid!"
+  "sitename": "Blendid",
+  "sitedescription": "Test blendid",
+  "siteicon": "/static/favicon.ico"
 }

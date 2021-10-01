@@ -52,7 +52,7 @@ module.exports = {
 
 	html: {
 		dataFile: "data/global.json",
-		excludeFolders: ["layouts", "shared", "macros", "data"],
+		excludeFolders: ["layouts", "shared", "components", "data"],
 		extensions: ["html", "njk", "json"],
 		htmlmin: {
 			collapseWhitespace: true,

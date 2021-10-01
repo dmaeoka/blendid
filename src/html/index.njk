@@ -1,0 +1,18 @@
+{#
+	Nunjucks Templating!
+	Homepage: https://mozilla.github.io/nunjucks/
+	Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+{% from "./components/alert/macro.njk" import alert %}
+
+{% extends 'layouts/application.njk' %}
+
+{% block content %}
+	{{ alert({
+		text: "hi there",
+		attributes: {
+			hello: "world"
+		}
+	}) }}
+	<h1 data-module="example">{{ sitename }}</h1>
+{% endblock %}

@@ -1,0 +1,25 @@
+{# <div
+	class="alertBox alert  fade show d-none"
+
+	>
+	<div class="mo-container align-items-center d-flex">
+		<p class="mb-0 mr-2">
+			<a href='#'>Find out more here.</a>
+		</p>
+		<button data-dismiss="alert" aria-label="Close" class="btn btn-sm btn-secondary ml-auto">Dismiss</button>
+	</div>
+</div> #}
+<div
+	{%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}
+	class="flex bg-green-200 p-4 {{ params.classes if params.classes }}"
+	role="alert"
+	aria-relevant="all">
+	<div class="flex justify-between w-full">
+		<div class="text-green-600">
+			<p>{{ params.text | safe }}</p>
+		</div>
+		<div class="text-sm text-gray-500">
+			<span>x</span>
+		</div>
+	</div>
+</div>

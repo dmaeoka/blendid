@@ -1,0 +1,52 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+  accept_roles:
+    - admin
+    - editor
+
+local_backend:
+  url: http://localhost:8081/api/v1
+
+media_folder: "src/static" # Media files will be stored in the repo under
+public_folder: "/static"
+
+collections:
+  - name: "setup"
+    label: "Setup"
+    editor:
+      preview: false
+    files:
+      - label: 'Site Info'
+        name: 'info'
+        format: 'json'
+        file: 'src/html/data/global.json'
+        fields:
+          - { label: 'Site Name', name: 'sitename', widget: 'string' }
+          - { label: 'Site Description', name: 'sitedescription', widget: 'string' }
+          - { label: 'Site Icon', name: 'siteicon', widget: 'file', default: '/icon.png' }
+
+  # - name: "menu-top"
+  #   label: "Menu Top"
+  #   editor:
+  #     preview: false
+  #   format: "json"
+  #   fields:
+  #     - { label: "Title", name: "title", widget: "string" }
+  #     - { label: "Category", name: "category", widget: "relation", collection: "blog", searchFields: ["title"], valueField: "title", displayFields: ["title"], required: false }
+
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    folder: "src/html/data/blog" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    format: 'json'
+    sort: "date:desc" # Default is title:asc
+    editor:
+      preview: false
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "date", format: "Do MMM YYYY"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
