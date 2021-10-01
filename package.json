@@ -23,6 +23,7 @@
 	},
 	"dependencies": {
 		"alpinejs": "^3.3.2",
+		"axios": "^0.21.4",
 		"stylelint-scss": "^3.20.1",
 		"tailwindcss": "^2.2.14"
 	},
@@ -69,6 +70,7 @@
 		"postcss-loader": "^6.1.1",
 		"postcss-preset-env": "^6.7.0",
 		"pretty-hrtime": "1.0.3",
+		"regenerator-runtime": "^0.13.9",
 		"require-dir": "1.2.0",
 		"sass": "^1.39.0",
 		"stylelint": "^13.13.1",

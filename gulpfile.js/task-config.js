@@ -1,9 +1,9 @@
 const path = require("path");
 const colors = require("tailwindcss/colors");
-const projectPath = require("./lib/projectPath");
+// const projectPath = require("./lib/projectPath");
 
 module.exports = {
-	html: true,
+	html: false,
 	images: true,
 	fonts: true,
 	static: true,
@@ -39,13 +39,13 @@ module.exports = {
 			plugins: [],
 			purge: {
 				enabled: true,
-				content: [
-					projectPath(
-						PATH_CONFIG.src,
-						PATH_CONFIG.html.src,
-						"**/*.{html,njk,json}"
-					)
-				],
+				// content: [
+				// 	projectPath(
+				// 		PATH_CONFIG.src,
+				// 		PATH_CONFIG.html.src,
+				// 		"**/*.{html,njk,json}"
+				// 	)
+				// ],
 			},
 		}
 	},
@@ -58,12 +58,23 @@ module.exports = {
 		},
 	},
 
+	// browserSync: {
+	// 	server: {
+	// 		// should match `dest` in
+	// 		// path-config.json
+	// 		baseDir: "public",
+	// 	},
+	// },
+
 	browserSync: {
-		server: {
-			// should match `dest` in
-			// path-config.json
-			baseDir: "public",
+		https: true,
+		proxy: {
+			target: "https://about.gitlab.com"
 		},
+		files: [
+			"./src/javascripts/**/*.js",
+			"./src/stylesheets/**/*.scss"
+		]
 	},
 
 	production: {

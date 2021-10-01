@@ -3,8 +3,6 @@ const gulp = require("gulp");
 const autoprefixer = require("autoprefixer");
 const browserSync = require("browser-sync");
 const cssnano = require("cssnano");
-
-const PostcssPurgeCss = require('@fullhuman/postcss-purgecss');
 const gulpif = require("gulp-if");
 const postcss = require("gulp-postcss");
 const sass = require("gulp-sass")(require("sass"));
