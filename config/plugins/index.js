@@ -23,10 +23,10 @@ export default (mode, path_config) => {
 		// 		'index.html': nunjucks_variables
 		// 	}
 		// }),
-		mpa({
-			open: false,
-			defaultEntries: "index.html,about.html",
-		}),
+		// mpa({
+		// 	open: false,
+		// 	defaultEntries: "index.html,about.html",
+		// }),
 		viteCommonjs(),
 		envCompatible(),
 		injectHtml(),
