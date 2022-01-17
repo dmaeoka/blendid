@@ -1,5 +1,6 @@
 {
-  "sitename": "Blendid",
-  "sitedescription": "Test blendid",
-  "siteicon": "/static/favicon.ico"
+	"sitename": "Blendid",
+	"sitedescription": "Test blendid",
+	"siteicon": "/favicon.ico",
+	"username": "Jhon"
 }

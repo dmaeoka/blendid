@@ -23,8 +23,8 @@ module.exports = {
 		 * ignore certain files
 		 * docs: https://eslint.org/docs/user-guide/configuring#ignorepatterns-in-config-files
 		 */
-		// 'my-file.js',
-		'gulpfile.js/**/*.js'
+		'vite.config.js',
+		'config/**/*.js'
 	],
 	rules: {
 		/**

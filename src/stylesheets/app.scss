@@ -2,13 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-	.btn {
-		@apply px-4 py-2 bg-blue-600 text-white rounded;
-	}
-}
-
 .hello-world {
 	@apply px-4;
 	background: blue;
+}
+
+.btn {
+	@apply px-4 py-2 bg-blue-600 text-white rounded;
+}
+
+#app {
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	color: #2c3e50;
+	margin-top: 60px;
+	background: url("@/images/sprite.png");
 }

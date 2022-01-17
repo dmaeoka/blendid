@@ -1,0 +1,10 @@
+{
+	"src": "./src",
+	"dest": "./public",
+	"base": "/",
+	"html": "html",
+	"publicDir": "static",
+	"javascripts": "js",
+	"stylesheets": "css",
+	"images": "img"
+}
