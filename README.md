@@ -29,5 +29,3 @@ This will create default src and config files in your directory and start compil
 </a>
 
 Visit [code.viget.com](http://code.viget.com) to see more projects from [Viget.](https://viget.com)
-
-test.
