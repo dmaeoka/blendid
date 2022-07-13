@@ -39,15 +39,15 @@ module.exports = {
 
 					gray: {
 						50: '#F1F5FB',
-						100: '#E1E4E8',
-						200: '#C2C9D2',
-						300: '#A4AFBB',
-						400: '#8594A5',
-						500: '#67798E',
-						600: '#526172',
-						700: '#3E4955',
-						800: '#293039',
-						900: '#15181C',
+						100: '#f8f9fa',
+						200: '#e9ecef',
+						300: '#dee2e6',
+						400: '#ced4da',
+						500: '#adb5bd',
+						600: '#6c757d',
+						700: '#495057',
+						800: '#343a40',
+						900: '#212529',
 					},
 
 					lightGray: {
@@ -184,7 +184,7 @@ module.exports = {
 				},
 				backgroundColor: theme => ({
 					...theme('colors'),
-					body: '#F1F5FB',
+					body: '#f8f9fa',
 				}),
 				backgroundImage: {
 					none: 'none',

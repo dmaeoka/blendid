@@ -11,124 +11,102 @@
 	<div class="container flex flex-col gap-6 py-8 flex-nowrap">
 
 		{{ alert({
-			title: "Example",
-			text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos id inventore cum animi velit accusantium minus sequi, nisi veritatis delectus ea quod eaque numquam tempora itaque quas natus perspiciatis! Doloremque.",
-			attributes: {
-				hello: "world"
-			}
+			title: "CO2 Emissions too high!",
+			text: "We detected that your CO2 emissions are too high. Please reduce your emissions to below the recommended level."
 		}) }}
 
-
-		<div class="px-6 py-8 bg-white rounded shadow">
-			<div class="flex flex-wrap items-center">
-				<div class="flex items-center w-full mb-4 lg:w-auto lg:mb-0">
-					<a href="tenancy.html" class="text-2xl font-bold text-blue-600 hover:underline">107 Cheapside, London EC2V 6DN.</a>
-					<span class="inline-block px-2 py-1 ml-2 text-xs text-white bg-green-500 rounded-full">Ref #10524390</span>
-				</div>
-				<div class="ml-auto">
-					<div class="relative" x-data="{ 'isHamburgerOpen': false }">
-						<button
-							class="p-3 ml-auto rounded lg:ml-0 bg-indigo-50 hover:bg-indigo-100"
-							@click="isHamburgerOpen = true">
-							<svg class="w-4 h-4 text-indigo-500" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M7.99996 9.33332C8.73634 9.33332 9.33329 8.73637 9.33329 7.99999C9.33329 7.26361 8.73634 6.66666 7.99996 6.66666C7.26358 6.66666 6.66663 7.26361 6.66663 7.99999C6.66663 8.73637 7.26358 9.33332 7.99996 9.33332Z" fill="currentColor"></path>
-								<path d="M3.33333 9.33332C4.06971 9.33332 4.66667 8.73637 4.66667 7.99999C4.66667 7.26361 4.06971 6.66666 3.33333 6.66666C2.59695 6.66666 2 7.26361 2 7.99999C2 8.73637 2.59695 9.33332 3.33333 9.33332Z" fill="currentColor"></path>
-								<path d="M12.6667 9.33332C13.4031 9.33332 14 8.73637 14 7.99999C14 7.26361 13.4031 6.66666 12.6667 6.66666C11.9303 6.66666 11.3334 7.26361 11.3334 7.99999C11.3334 8.73637 11.9303 9.33332 12.6667 9.33332Z" fill="currentColor"></path>
-							</svg>
-						</button>
-						<ul
-							x-show="isHamburgerOpen"
-							x-cloak
-							@click.away="isHamburgerOpen = false"
-							class="absolute right-0 z-50 float-right py-2 m-0 text-base text-left list-none bg-white border border-gray-100 border-none rounded shadow-lg dropdown-menu min-w-max bg-clip-padding" >
-							<li><a class="block w-full px-4 py-2 text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100" href="summary.html">SUMMARY</a></li>
-							<li><a class="block w-full px-4 py-2 text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100" href="transactions.html">TRANSACTIONS</a></li>
-							<li><a class="block w-full px-4 py-2 text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100" href="statements.html">STATEMENTS</a></li>
-							<li><a class="block w-full px-4 py-2 text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:bg-gray-100" href="direct-debit.html">DIRECT DEBIT</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="flex flex-col gap-4 flex-nowrap md:flex-row">
-			<div class="md:w-1/5">
-				<div class="p-6 text-white bg-purple-500 rounded shadow">
+		<div class="flex flex-col flex-wrap md:flex-row md:-mx-2 gap-y-4">
+			<a href="#" class="block hover:-translate-y-1 lg:w-1/5 md:px-2 md:w-1/2 relative transform transition transition-transform w-full">
+				<div class="p-6 text-white bg-gradient-to-bl bg-purple-500 rounded-xl shadow-lg gradient-stops">
 					<span>
 						<img src="images/icon-energy2.svg" height="50" width="50" />
 					</span>
 					<div class="mt-3 mb-1 text-3xl font-bold">1.1Kwh</div>
 					<p class="text-sm font-medium">Power Consumption</p>
 				</div>
-			</div>
-			<div class="md:w-1/5">
-				<div class="p-6 text-white bg-orange-500 rounded shadow">
+			</a>
+			<a href="#" class="block hover:-translate-y-1 lg:w-1/5 md:px-2 md:w-1/2 relative transform transition transition-transform w-full">
+				<div class="p-6 text-white bg-gradient-to-bl bg-orange-500 rounded-xl shadow-lg gradient-stops">
 					<span>
 						<img src="images/icon-wifi.svg" height="50" width="50" />
 					</span>
-					<div class="mt-3 mb-1 text-3xl font-bold">Speed</div>
-					<p class="text-sm font-medium">110.1 Mbps</p>
+					<div class="mt-3 mb-1 text-xl font-bold">My Property Health Check</div>
 				</div>
-			</div>
-			<div class="md:w-1/5">
-				<div class="p-6 text-white bg-green-500 rounded shadow">
+			</a>
+			<a href="#" class="block hover:-translate-y-1 lg:w-1/5 md:px-2 md:w-1/2 relative transform transition transition-transform w-full">
+				<div class="p-6 text-white bg-gradient-to-bl bg-green-500 rounded-xl shadow-lg gradient-stops">
 					<span>
 						<img src="images/icon-thermometer.svg" height="50" width="50" />
 					</span>
-					<div class="mt-3 mb-1 text-3xl font-bold">23.5ºC</div>
-					<p class="text-sm font-medium">Thermostat</p>
+					<div class="mt-3 mb-1 text-3xl font-bold">REPLACE</div>
+					<p class="text-sm font-medium">CO2 Levels</p>
 				</div>
-			</div>
-			<div class="md:w-1/5">
-				<div class="p-6 text-white bg-indigo-500 rounded shadow">
+			</a>
+			<a href="#" class="block hover:-translate-y-1 lg:w-1/5 md:px-2 md:w-1/2 relative transform transition transition-transform w-full">
+				<div class="p-6 text-white bg-gradient-to-bl bg-blue-500 rounded-xl shadow-lg gradient-stops">
 					<span>
 						<img src="images/icon-devices.svg" height="50" width="50" />
 					</span>
-					<div class="mt-3 mb-1 text-3xl font-bold">4</div>
+					<div class="mt-3 mb-1 text-3xl font-bold">REPLACE</div>
 					<p class="text-sm font-medium">Connected devices</p>
 				</div>
-			</div>
+			</a>
 
-			<div class="md:w-1/5">
-				<div class="p-6 text-white bg-gray-800 rounded shadow">
+			<a href="#" class="block hover:-translate-y-1 lg:w-1/5 md:px-2 md:w-1/2 relative transform transition transition-transform w-full">
+				<div class="p-6 text-white bg-gradient-to-bl bg-gray-800 rounded-xl shadow-lg gradient-stops">
 					<span>
 						<img src="images/icon-energy.svg" height="50" width="50" />
 					</span>
-					<div class="mt-3 mb-1 text-3xl font-bold">113.1m³</div>
+					<div class="mt-3 mb-1 text-3xl font-bold">REPLACE</div>
 					<p class="text-sm font-medium">Water</p>
+				</div>
+			</a>
+		</div>
+
+		<div class="backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-60 bg-white border border-white p-6 rounded-xl shadow-lg">
+			<div>
+				<h2 class="flex items-center mb-2">
+					<span class="text-2xl font-bold ">My tenancy detail</span>
+					<span class="inline-block px-2 py-1 ml-2 text-xs text-white bg-green-500 rounded-full">Ref #10524390</span>
+				</h2>
+				<a href="tenancy.html" class="font-bold text-blue-600 hover:underline">107 Cheapside, London EC2V 6DN.</a>
+				<div class="md:flex -mx-4 mt-4">
+					<a class="block px-4 border-r text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:underline" href="summary.html">SUMMARY</a>
+					<a class="block px-4 border-r text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:underline" href="transactions.html">TRANSACTIONS</a>
+					<a class="block px-4 border-r text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:underline" href="statements.html">STATEMENTS</a>
+					<a class="block px-4 border-r text-sm font-medium text-gray-900 bg-transparent dropdown-item whitespace-nowrap hover:underline" href="direct-debit.html">DIRECT DEBIT</a>
 				</div>
 			</div>
 		</div>
 
 		<div class="flex gap-4 flex-nowrap">
 			<div class="w-1/2">
-				<div class="overflow-hidden bg-white rounded shadow">
-					<div class="px-6 pt-6 mb-8">
+				<div class="overflow-hidden backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-60 bg-white border border-white rounded-xl shadow-lg">
+					<div class="px-6 pt-6">
 						<div class="mb-2 text-xl font-bold">Your account ballance</div>
-						<div class="px-4 py-3 my-8 border-2 border-green-500 border-solid rounded">
+						<div class="px-4 py-3 my-4 border-2 border-green-500 border-solid rounded">
 							<div class="text-3xl font-bold">£135.00</div>
 							<p class="text-sm text-green-600">You are currently on credit.</p>
 						</div>
 					</div>
-					<div class="flex items-center justify-between p-6 bg-lightGray-50">
-						<a href="https://buy.stripe.com/test_aEU7vQ3PE2YZ8Ja8wx" target="_blank" class="px-3 py-2 text-xs text-white bg-indigo-500 border border-transparent rounded hover:bg-indigo-600">Make payment</a>
-						<a href="statements.html" class="px-3 py-2 text-xs text-indigo-500 bg-white border border-indigo-500 rounded hover:bg-indigo-600 hover:text-white">View Statements</a>
+					<div class="flex items-center justify-between p-6">
+						<a href="https://buy.stripe.com/test_aEU7vQ3PE2YZ8Ja8wx" target="_blank" class="text-sm btn btn-primary">Make payment</a>
+						<a href="statements.html" class="text-sm btn btn-secondary">View Statements</a>
 					</div>
 				</div>
-
 			</div>
 			<div class="w-1/2">
-				<div class="overflow-hidden bg-white rounded shadow">
-					<div class="px-6 pt-6 mb-8">
+				<div class="overflow-hidden backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-60 bg-white border border-white rounded-xl shadow-lg">
+					<div class="px-6 pt-6">
 						<div class="mb-2 text-xl font-bold">Your upcoming events</div>
-						<div class="px-4 py-3 my-8 text-green-600 border border-green-500 rounded bg-green-50">
+						<div class="px-4 py-4 my-4 text-white rounded bg-green-600">
 							<div class="text-xl font-bold">Washing machine replacement</div>
 							<p class="text-sm">Date confirmed for 20 Jun 2022 at 13:00.</p>
 						</div>
 					</div>
-					<div class="flex items-center justify-between p-6 bg-lightGray-50">
-						<button class="px-3 py-2 text-xs text-white bg-indigo-500 border border-transparent rounded hover:bg-indigo-600">Report Repair</button>
-						<a href="appointments.html" class="px-3 py-2 text-xs text-indigo-500 bg-white border border-indigo-500 rounded hover:bg-indigo-600 hover:text-white">Manage appointments</a>
+					<div class="flex items-center justify-between p-6">
+						<button class="text-sm btn btn-primary">Report Repair</button>
+						<a href="appointments.html" class="text-sm btn btn-secondary">Manage appointments</a>
 					</div>
 				</div>
 			</div>
@@ -141,7 +119,7 @@
 
 		<div class="flex flex-row flex-wrap -mx-4">
 			<div class="w-1/2 px-4">
-				<a href="payments.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-transparent rounded shadow hover:bg-blue-50" data-aura-rendered-by="136:2;a">
+				<a href="payments.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-white rounded-xl shadow-lg backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-60 hover:bg-blue-100">
 					<div class="w-full md:w-3/4 lg:w-auto lg:pr-10">
 						<h3 class="mb-4 text-xl font-bold text-gray-900">My Payments</h3>
 						<p class="font-medium text-gray-500">View, manage and make payments.</p>
@@ -154,7 +132,7 @@
 				</a>
 			</div>
 			<div class="w-1/2 px-4">
-				<a href="repairs.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-transparent rounded shadow hover:bg-blue-50" data-aura-rendered-by="136:2;a">
+				<a href="repairs.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-white rounded-xl shadow-lg backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-60 hover:bg-blue-100">
 					<div class="w-full md:w-3/4 lg:w-auto lg:pr-10">
 						<h3 class="mb-4 text-xl font-bold text-gray-900">My Repairs</h3>
 						<p class="font-medium text-gray-500">View, manage and make repairs.</p>
@@ -167,7 +145,7 @@
 				</a>
 			</div>
 			<div class="w-1/2 px-4">
-				<a href="tenancy.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-transparent rounded shadow hover:bg-blue-50" data-aura-rendered-by="136:2;a">
+				<a href="tenancy.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-white rounded-xl shadow-lg backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-60 hover:bg-blue-100">
 					<div class="w-full md:w-3/4 lg:w-auto lg:pr-10">
 						<h3 class="mb-4 text-xl font-bold text-gray-900">My Tenancy</h3>
 						<p class="font-medium text-gray-500">View, manage and edit your tenancy.</p>
@@ -180,7 +158,7 @@
 				</a>
 			</div>
 			<div class="w-1/2 px-4">
-				<a href="faq.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-transparent rounded shadow hover:bg-blue-50" data-aura-rendered-by="136:2;a">
+				<a href="faq.html" class="flex items-center w-full p-10 mb-4 overflow-hidden text-left text-gray-300 transition duration-200 bg-white border border-white rounded-xl shadow-lg backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-60 hover:bg-blue-100">
 					<div class="w-full md:w-3/4 lg:w-auto lg:pr-10">
 						<h3 class="mb-4 text-xl font-bold text-gray-900">FAQs</h3>
 						<p class="font-medium text-gray-500">Find answers to common questions.</p>

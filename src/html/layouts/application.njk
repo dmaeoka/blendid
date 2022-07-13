@@ -10,7 +10,9 @@
 	</head>
 	<body class="flex flex-col w-full antialiased font-body bg-body text-body">
 		{% include "shared/header.njk" %}
+		<div class="bg-fixed bg-left-top bg-no-repeat bg-image" style="background-size: 60%;">
 		{% block content %}{% endblock %}
+		</div>
 		{% include "shared/footer.njk" %}
 		{% block javascript %}
 		<script src="javascripts/app.js"></script>
