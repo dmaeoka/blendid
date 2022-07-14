@@ -8,7 +8,48 @@
 {% extends 'layouts/application.njk' %}
 
 {% block content %}
-	<div class="container flex flex-col gap-6 py-8 flex-nowrap">
-		Summary
-	</div>
+	<section>
+		<div class="container flex flex-col gap-6 py-8 flex-nowrap">
+			<div class="py-8 px-6">
+				<h2 class="text-3xl font-bold mb-2">Summary</h2>
+				<p>You have an outstanding balance on this tenancy</p>
+			</div>
+
+			<div class="pt-4 bg-white shadow rounded-xl">
+				<div class="flex px-6 pb-4 border-b">
+					<h3 class="text-xl font-bold">Charges of 2022</h3>
+				</div>
+				<div class="p-4 overflow-x-auto">
+					<table class="table-auto w-full">
+						<thead>
+							<tr class="text-xs text-gray-500 text-left">
+								<th class="pb-3 font-medium">Type</th>
+								<th width="200" class="pb-3 font-medium">Start date</th>
+								<th width="200" class="pb-3 font-medium">Amosunt</th>
+								<th width="100" class="pb-3 font-medium"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr class="text-xs bg-gray-50">
+								<td class="py-5 px-6 font-medium">Rent</td>
+								<td class="font-medium">29/10/2021</td>
+								<td class="font-medium">£50.00</td>
+								<td>
+									<span class="inline-block py-1 px-2 text-white bg-green-500 rounded-full">Paid</span>
+								</td>
+							</tr>
+							<tr class="text-xs">
+								<td class="py-5 px-6 font-medium">Communal Aerea Cleaning</td>
+								<td class="font-medium">29/10/2021</td>
+								<td class="font-medium">£50.00</td>
+								<td>
+									<span class="inline-block py-1 px-2 text-white bg-red-500 rounded-full">Canceled</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}

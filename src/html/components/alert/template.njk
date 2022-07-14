@@ -1,6 +1,6 @@
 <div
 	{%- for attribute, value in params.attributes %} {{attribute}}="{{value}}"{% endfor %}
-	class="p-6 bg-red-500 border-l-4 border-red-600 rounded-r {{ params.classes if params.classes }}"
+	class="p-6 bg-red-500 border-l-4 border-red-600 rounded-xl {{ params.classes if params.classes }}"
 	x-data="{'showBanner': true}"
 	x-show="showBanner"
 	x-cloak
