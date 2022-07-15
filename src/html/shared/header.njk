@@ -5,17 +5,52 @@
 				<a class="flex-shrink-0 mr-12 text-2xl font-semibold text-white" href="/">
 					<img class="drop-shadow-lg filter h-14" src="images/logo-white.svg" alt="" width="auto">
 				</a>
+				<!--
 				<ul class="hidden xl:flex">
+					{%- for value in menu %}
+
 					<li>
 						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="index.html">
-							<span>Dashboards</span>
+							<span>{{value.name}}</span>
+						</a>
+					</li>
+					{%- endfor %}
+
+					{# <li>
+						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="index.html">
+							<span>Security & Safety</span>
+						</a>
+					</li>
+					<li>
+						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="index.html">
+							<span>My landlord’s reports</span>
+						</a>
+					</li>
+					<li>
+						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="index.html">
+							<span>My building</span>
+						</a>
+					</li>
+					<li>
+						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="index.html">
+							<span>Neighbourhood Maintenance</span>
+						</a>
+					</li>
+					<li>
+						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="index.html">
+							<span>Repairs</span>
+						</a>
+					</li>
+					<li>
+						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="index.html">
+							<span>Health Check</span>
 						</a>
 					</li>
 					<li>
 						<a class="flex items-center font-medium mr-10 text-sm text-gray-50 hover:text-gray-100 hover:underline" href="faq.html">
 							<span>FAQs</span>
 						</a>
-					</li>
+					</li> #}
 				</ul>
 				<ul class="hidden ml-auto mr-6 xl:flex lg:justify-end lg:items-center lg:space-x-6">
 					<li x-data>
@@ -36,7 +71,7 @@
 				<div class="hidden xl:block">
 					<button class="flex items-center">
 						<div class="mr-3">
-							<p class="text-sm text-white">Napoleon Dynamite</p>
+							<p class="text-sm text-white">John Smith</p>
 						</div>
 						<div class="mr-2">
 							<img class="object-cover object-right w-14 h-14 rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80" alt="">
@@ -56,6 +91,7 @@
 						</svg>
 					</button>
 				</div>
+				-->
 			</div>
 		</div>
 	</nav>

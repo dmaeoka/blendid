@@ -1,5 +1,15 @@
 {
-  "sitename": "Blendid",
-  "sitedescription": "Test blendid",
-  "siteicon": "/static/favicon.ico"
+	"sitename": "Blendid",
+	"sitedescription": "Test blendid",
+	"siteicon": "/static/favicon.ico",
+	"menu": [
+		{
+			"name": "Home",
+			"url": "/"
+		},
+		{
+			"name": "FAQs",
+			"url": "/contact"
+		}
+	]
 }
