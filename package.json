@@ -25,6 +25,7 @@
 	"dependencies": {
 		"alpinejs": "^3.10.2",
 		"axios": "^0.21.4",
+		"gsap": "^3.10.4",
 		"tailwindcss": "^2.2.14"
 	},
 	"devDependencies": {

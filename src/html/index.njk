@@ -14,6 +14,14 @@
 {% block content %}
 	<section>
 		<div class="container flex flex-col gap-6 py-8 flex-nowrap ">
+			<div class="absolute bottom-0 illustrations invisible left-0 md:visible right-0 top-0 w-full">
+				<img id="robot"
+					src="/images/illustration-robot.svg"
+					class="absolute bottom-0 left-0 w-44">
+				<img id="tv"
+					src="/images/illustration-tv.svg"
+					class="absolute bottom-0 right-0 w-44">
+			</div>
 
 			{{ alert({
 				title: "Your boiler annual service is due in 18 days."

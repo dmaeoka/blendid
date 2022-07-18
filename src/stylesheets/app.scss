@@ -41,11 +41,15 @@
 .mask {
 	mask-image: url("/images/mask.svg");
 	mask-repeat: no-repeat;
-	// mask-size: 110% 110%;
 	mask-size: cover;
 	mask-position: 0px 0px;
 }
 
 .bg-glass {
 	@apply backdrop-blur-lg backdrop-filter backdrop-saturate-200 bg-opacity-70 bg-white border border-white rounded-xl shadow-lg;
+}
+
+.illustrations {
+	z-index: -1;
+
 }
