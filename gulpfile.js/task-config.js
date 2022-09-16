@@ -635,6 +635,7 @@ module.exports = {
 			// path-config.json
 			baseDir: "public",
 		},
+        port: 8080,
 	},
 
 	production: {
